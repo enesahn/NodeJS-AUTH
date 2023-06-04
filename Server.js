@@ -2,7 +2,7 @@ const express = require('express'),
       app = express(),
       router = express.Router();
 const config = require('./config.json');
-const port = 3000; 
+const port = 80; 
 const bodyParser = require('body-parser');
 
 const sqlite3 = require("sqlite3");
