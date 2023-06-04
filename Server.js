@@ -84,4 +84,4 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/',router);
 console.log('\x1b[36m%s\x1b[0m', '[+] Auth system loaded !')
 delay(5000);
-app.listen(port, ()=>{console.log(`Listening port : ${port}`)});
+app.listen('8080', '18.212.160.231');
