@@ -1,4 +1,10 @@
 const macros = require("../Macros");
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("https://discordapp.com/api/webhooks/1114874636375687270/4bse9FnxYBN7ofI3rhmFMgHLbKcaN3Ogz4QVPjFyelW8wdpIw28k-_OfjWjSrKY0L8hK");
+ 
+const IMAGE_URL = 'https://w7.pngwing.com/pngs/168/75/png-transparent-lightweight-directory-access-protocol-computer-icons-authentication-directory-service-computer-servers-authentication-protocol-logo-sign-authentication.png';
+hook.setUsername('[LOADER] Logger');
+hook.setAvatar(IMAGE_URL);
 module.exports = {
 name: "extend",
 adminOnly: true,
@@ -14,7 +20,9 @@ execute(db,body,out_obj,adminMode){
                         if(err)
                             resolve(err.message);
                         else
-                            resolve(`${body.extendBy} days have been added to ${body.username}. New Expiry ${extendDate}`);
+                            resolve(hook.info('**Lisans uzatıldı**', body.extendBy + ' gün şu kullanıcıya eklendi ' + body.username + 'Yeni bitiş süresi: '+ extendDate));
+                            
+                            
                     })
                 }
                 else{

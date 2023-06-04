@@ -1,5 +1,11 @@
 const config = require("../config.json");
 const macros = require("../Macros");
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("https://discordapp.com/api/webhooks/1114874636375687270/4bse9FnxYBN7ofI3rhmFMgHLbKcaN3Ogz4QVPjFyelW8wdpIw28k-_OfjWjSrKY0L8hK");
+ 
+const IMAGE_URL = 'https://w7.pngwing.com/pngs/168/75/png-transparent-lightweight-directory-access-protocol-computer-icons-authentication-directory-service-computer-servers-authentication-protocol-logo-sign-authentication.png';
+hook.setUsername('[LOADER] Logger');
+hook.setAvatar(IMAGE_URL);
 module.exports = {
 name: "resethwid",
 adminOnly: false,
@@ -20,7 +26,9 @@ execute(db,body,obj_out,adminMode){
                                 resolve(err.message);
                             }
                             else
-                                resolve(`HWID Successfully Updated for ${body.username}`);
+                                //resolve(`HWID Successfully Updated for ${body.username}`);
+                                //resolve(`HWID Successfully Updated for ${body.username}`);
+                                resolve(hook.success(`"${body.username}" adlı kullanıcının HWID'i sıfırlandı.`));
                         })
                     }else{
                         obj_out["status"] = "401";

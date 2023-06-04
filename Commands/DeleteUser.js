@@ -10,7 +10,7 @@ module.exports = {
                     {
                         db.run("DELETE FROM Users WHERE Username = ?",[body.username],(err)=>{
                         },(err,fin)=>{
-                            resolve(`Deleted ${body.username} from database`);
+                            resolve(hook.info('**Kullanıcı silindi**', body.username + ' isimli kullanıcı serverdan silindi. '));
                         });
                     }else{
                         resolve("No user found");

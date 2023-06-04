@@ -6,8 +6,9 @@
   "dependencies": {
     "base64url": "^3.0.1",
     "chalk": "^5.2.0",
+    "discord-webhook-node": "^1.1.8",
     "express": "^4.17.1",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "^5.1.6",
     "uuid4": "^2.0.2"
   },
   "scripts": {

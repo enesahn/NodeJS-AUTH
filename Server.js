@@ -5,12 +5,18 @@ const config = require('./config.json');
 const port = 80; 
 const bodyParser = require('body-parser');
 
+//////////
+
+
+
+/////////
+
 const sqlite3 = require("sqlite3");
 const database_filepath = "./users.db";
 const db = new sqlite3.Database(database_filepath);
 const DEBUG = config.DEBUG;
 const crypto = require('./Encryption/crypto');
-const key = Buffer.from("oUHqJ9IOlyjA4edqmyFdkeNi8J/x+dte2AWlGRd2uTM=",'base64');
+const key = Buffer.from("Odj93FIOlyjA4edqmy//j09Dj3nx+dte2AWlGRd2uTA=",'base64');
 let session_ivs = new Map();
 
 
@@ -41,7 +47,7 @@ const validate_session = function(req,res,next)
     res.send({"res":"Invalid Session"});
      
 }
-router.post("/post",validate_session,async(req,res)=>{
+router.post("/P45Qemd9PTGsY1n6",validate_session,async(req,res)=>{
     console.log(req.body);
     if(!DEBUG)req.body = await crypto.decryptBody(req.body,key,req.body.iv); //decrypt the JSON Object request
     console.log(req.body);
@@ -72,7 +78,7 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
   } 
 
-app.get("/initialize",async(req,res)=>{
+app.get("/gnDhx5ZbmuCItkJd",async(req,res)=>{
     let iv = crypto.generateIV();
     console.log("Generated: " + iv);
     res.send(iv);
