@@ -2,7 +2,7 @@ const express = require('express'),
       app = express(),
       router = express.Router();
 const config = require('./config.json');
-const port = 3131; 
+const port = 3000; 
 const bodyParser = require('body-parser');
 
 const sqlite3 = require("sqlite3");
@@ -84,4 +84,4 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/',router);
 console.log('\x1b[36m%s\x1b[0m', '[+] Auth system loaded !')
 delay(5000);
-app.listen('8080', '127.0.0.1');
+app.listen(port, ()=>{console.log(`Listening port : ${port}`)});
